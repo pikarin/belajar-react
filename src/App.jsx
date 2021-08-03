@@ -1,41 +1,42 @@
-import React, { useState } from 'react'
-import logo from './logo.svg'
+import React from 'react'
+import AppLink from './components/AppLink'
+import ButtonCounter from './components/ButtonCounter'
+import AppLogo from './components/AppLogo'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
+    <div className="text-center">
+      <header className="flex flex-col items-center justify-center min-h-screen
+        space-y-4 bg-[#282c34]
+        text-3xl text-white"
+      >
+        <AppLogo className="h-[40vmin] pointer-events-none" />
+        <p>Aditia Belajar React!</p>
         <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
+          <ButtonCounter className="px-4 py-2 rounded bg-blue-500 hover:bg-blue-700 text-3xl" />
         </p>
         <p>
           Edit <code>App.jsx</code> and save to test HMR updates.
         </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
+        <p className="divide-x-2 divide-gray-50">
+          <AppLink
+            className="hover:text-blue-500 px-6"
+            href="https://reactjs.org/"
             target="_blank"
             rel="noopener noreferrer"
           >
             Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
+          </AppLink>
+          {/* {' | '} */}
+          <AppLink
+            className="px-6"
             href="https://vitejs.dev/guide/features.html"
             target="_blank"
             rel="noopener noreferrer"
           >
             Vite Docs
-          </a>
+          </AppLink>
         </p>
       </header>
     </div>
